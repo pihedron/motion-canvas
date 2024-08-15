@@ -214,3 +214,52 @@ export function findAllCodeRanges(
 
   return ranges;
 }
+
+/**
+ * Find all code ranges that match the given substring.
+ *
+ * @param code - The code to search in.
+ * @param pattern - A string to search for.
+ * @param limit - An optional limit on the number of ranges to find.
+ */
+export function findAllCodeStrings(
+  code: string,
+  pattern: string,
+  limit = Infinity,
+): CodeRange[] {
+  // const matches = code.matchAll(pattern);
+  const ranges: CodeRange[] = [];
+  let index = 0;
+  let line = 0;
+  let column = 0;
+
+  // implement KMP
+
+  // for (const match of matches) {
+  //   if (match.index === undefined || ranges.length >= limit) {
+  //     continue;
+  //   }
+
+  //   let from: CodePoint = [line, column];
+  //   while (index <= code.length) {
+  //     if (index === match.index) {
+  //       from = [line, column];
+  //     }
+
+  //     if (index === match.index + match[0].length) {
+  //       ranges.push([from, [line, column]]);
+  //       break;
+  //     }
+
+  //     if (code[index] === '\n') {
+  //       line++;
+  //       column = 0;
+  //     } else {
+  //       column++;
+  //     }
+  //     index++;
+  //   }
+  // }
+
+  return ranges;
+}
